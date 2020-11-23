@@ -1,4 +1,6 @@
 ## MQTT在Android上的二次封装
+https://github.com/pingerx/android-mqtt
+
 [ ![Download](https://api.bintray.com/packages/fungo/maven/android-mqtt/images/download.svg) ](https://bintray.com/fungo/maven/android-mqtt/_latestVersion)
 
 #### 添加依赖

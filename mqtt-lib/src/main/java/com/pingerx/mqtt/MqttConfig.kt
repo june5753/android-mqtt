@@ -6,10 +6,11 @@ package com.pingerx.mqtt
  */
 class MqttConfig {
 
+    //换成本机服务器
     private var baseUrl = "tcp://iot.eclipse.org:1883"
     private var userName = "admin"
     private var password = "password"
-    private var clientId = "MqttAndroidClient"
+    private var clientId = "MqttAndroidClient" + System.currentTimeMillis()
 
     fun create(): MqttConfig {
         return this

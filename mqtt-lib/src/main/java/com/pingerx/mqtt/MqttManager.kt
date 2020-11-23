@@ -92,6 +92,7 @@ class MqttManager {
         }
         val callback = MqttSubscriber()
         subscriber?.let { callback.it() }
+
         try {
             mqttClient?.connect(generateConnectOptions(), null, object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken) {
@@ -194,7 +195,9 @@ class MqttManager {
             performPublishMessage(topic, content)
         } else {
             connect {
-                onConnectSuccess { performPublishMessage(topic, content) }
+                onConnectSuccess {
+                    performPublishMessage(topic, content)
+                }
             }
         }
     }
@@ -253,8 +256,8 @@ class MqttManager {
         val options = MqttConnectOptions()
         options.isAutomaticReconnect = true
         options.isCleanSession = false
-        options.userName = mConfig?.getUserName()
-        options.password = mConfig?.getPassword()?.toCharArray()
+//        options.userName = mConfig?.getUserName()
+//        options.password = mConfig?.getPassword()?.toCharArray()
         return options
     }
 
